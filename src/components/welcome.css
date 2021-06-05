@@ -1,0 +1,31 @@
+#formdiv {
+
+    margin: 40px 0px;
+}
+
+@media screen and (max-width:650px) {
+   
+    #welcomeimg{
+        width: 100%;
+    }
+}
+
+#formdiv{
+  
+    margin: 50px 0px;
+}
+
+#welcometext{
+      text-align: initial;
+      color: #908da1 !important;
+     
+  }
+
+.welcomeheading{
+      text-align: initial;
+      color: black !important;
+  }
+
+  #nextstep{
+      font-size: 7px;
+  }

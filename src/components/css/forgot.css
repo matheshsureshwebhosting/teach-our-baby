@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Original+Surfer&display=swap');
+* {  
+  font-family:'Original Surfer';
+}
+
+#email1,
+#password,
+#cpassword,
+#uname {
+    border-radius:  0.25rem;
+    border: none;
+}
+
+#forgot {
+    float: right;
+}
+
+#forgot {
+    background-color: #7c37fa;
+}
+
+#formdiv {
+
+    margin: 50px 0px;
+}
+#email1,#uname{
+    background-color: #dee2e66e;
+    padding: 10px;
+}
+#email1,
+#uname {
+    background-color: #dee2e66e;
+    padding: 10px;
+}
+
+.btn {
+    width: 100%;
+    border-radius:  0.25rem;
+}
+
+input[type=email] {
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    border: none;
+}
+
+
+#secondpart {
+    margin-top: 0px !important;
+    height: 60vh;
+}
+
+#before {
+    position: absolute;
+    margin-top: 2%;
+    font-size: 20px;
+    color: black;
+    display: none;
+}
+
+.colortext {
+    color: #7c37fa;
+    font-weight: 500px;
+}
+
+@media (max-width:650px) {
+    #before {
+        position: absolute;
+        margin-top: 2%;
+        font-size: 20px;
+        color: black;
+        display: block !important;
+    }
+
+    #leftimg {
+        display: none;
+    }
+}
+
+#leftimg {
+    width: 70%;
+    margin-top: 40px;
+}
+
+p {
+    color: #908da1 !important;
+    font-weight: 400px;
+}
+
+.content {
+    text-align: initial;
+}
+
+.input-preview {
+
+    border-radius: 70px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    transition: ease-in-out 750ms;
+    background-size: cover;
+    /* background-image:url("./camera-icon.png"); */
+}
+
+#edit {
+    margin-bottom: 20px !important;
+    float: right;
+}

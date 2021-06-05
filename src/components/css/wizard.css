@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Original+Surfer&display=swap');
+
+* {
+    font-family: 'Original Surfer';
+}
+
+#email,
+#password,
+#cpassword,
+#uname,
+#Description {
+    border-radius: 0.25rem;
+    border: none;
+    border: 1px solid #ccc;
+    border-color: #ccc;
+}
+
+#forgot {
+    float: right;
+}
+
+#forgot {
+    background-color: #7c37fa;
+}
+
+
+#formdiv {
+
+    /* margin: 50px 0px 0px 85px; */
+}
+
+#email,
+#uname {
+    background-color: #dee2e66e;
+    padding: 10px;
+    border-radius: 0.25rem;
+}
+
+#category,
+#shuffle,
+#addcat,
+#Description {
+    margin-bottom: 30px;
+    background-color: #dee2e66e;
+    padding: 10px;
+    border-radius: 0.25rem;
+}
+
+.btn {
+    width: 100%;
+    border-radius: 0.25rem;
+}
+
+input[type=email] {
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    border: none;
+}
+
+textarea[type=text] {
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    border: none;
+}
+
+#secondpart {
+    margin-top: 40px;
+    height: 62vh;
+}
+
+#before {
+    position: absolute;
+    margin-top: 2%;
+    font-size: 20px;
+    color: black;
+    display: none;
+}
+
+.colortext {
+    color: #7c37fa;
+    font-weight: 500px;
+}
+
+@media (max-width:650px) {
+    .next {
+        margin-top: -316px !important;
+        margin-left: 198px !important;
+        width: 30% !important;
+    }
+
+    #secondpart {
+        height: 72vh;
+        margin-left: 25px !important;
+    }
+
+    .previous {
+        width: 82px;
+        float: left;
+        margin-top: -163px !important;
+        margin-left: 2px;
+    }
+
+    label {
+        margin-left: -200px;
+    }
+
+    #deslabel {
+        margin-left: -201px !important;
+    }
+
+    #catlabel {
+        margin-left: -202px !important;
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    #pptlabel {
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .add {
+        width: 100% !important;
+        align-items: center !important;
+    }
+
+    .modal-dialog {
+        margin-left: -28px !important;
+    }
+
+}
+@media only screen and (max-device-width: 768px) and (orientation:landscape) {
+    #secondpart {
+        margin-left: 50px !important;
+        height: 125vh;
+    }
+    #iconimg {
+        margin-top: 15px;
+    }
+  }
+  @media screen and (max-width: 850px) and (orientation: landscape) { 
+    #secondpart {
+        margin-left: 50px !important;
+        height: 125vh;
+    }
+    #iconimg {
+        margin-top: 15px;
+    }
+}
+
+/* @media screen (max-width:650px) and(orientation: landscape) {
+    #secondpart {
+        margin-left: 0px !important;
+        height: 125vh;
+    }
+} */
+
+#secondpart {
+    margin-left: 160px;
+}
+
+#Description {
+    margin-bottom: 30px;
+    background-color: #dee2e66e;
+    padding: 10px;
+    width: 100%;
+    margin-left: -20px;
+    border-radius: 0.25rem;
+}
+
+label {
+    margin-left: -132px;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#deslabel {
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: -210px;
+}
+
+p {
+    color: #908da1 !important;
+    font-weight: 400px;
+}
+
+.content {
+    text-align: initial;
+}
+
+.next {
+    margin-top: -431px;
+    margin-left: 210px;
+    width: 30%;
+}
+
+.previous {
+    width: 82px;
+    float: left;
+    margin-top: -221px;
+    margin-left: 2px;
+}
+
+#leftimg {
+    width: 50%;
+    margin-top: 40px;
+}
+
+.submit {
+    margin-top: 150px;
+    margin-left: -5px;
+    background-color: #7c37fa !important;
+}
+
+.form1modal {
+    display: block;
+    background-color: rgba(0, 0, 0, 0.719);
+}
+
+.lastform {
+    margin-top: 50px;
+}
+
+#catlabel {
+    margin-left: -212px;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#pptlabel {
+    margin-left: -193px;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#shulabellabel {
+    margin-left: -132px;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.modal-content {
+    margin-left: 82px !important;
+    border: none !important;
+    margin-top: 40px;
+    /* background-color: white !important; */
+}
+
+.add {
+    width: 50%;
+    align-items: center !important;
+}
+
+#copymodel {
+    background-color: white !important;
+}

@@ -1,0 +1,476 @@
+#email,
+#password,
+#cpassword {
+    border-radius:  0.25rem;
+}
+
+#forgot {
+    float: right;
+}
+#forgottext{
+    color: #7c37fa;
+    float: right;
+    margin-bottom: 20px;
+    text-decoration: none;
+}
+
+#signin {
+    background-color: #7c37fa;
+    float: right;
+    margin-bottom: 20px;
+}
+
+
+#formdiv {
+
+    margin: 40px 0px;
+}
+
+#email,#uname {
+    background-color: #80808014;
+    font-weight: bold;
+}
+
+#password,
+#cpassword {
+    background-color: #80808014;
+    font-weight: bold;
+}
+
+.btn {
+    width: 100%;
+    border-radius:  0.25rem;
+}
+
+#google {
+    float: right;
+    width: 45%;
+    background-color: red;
+    color: white;
+    border-radius:  0.25rem;
+    height: 40px;
+    font-weight: bold;
+    border: 1px solid red;
+}
+
+#facebook {
+    width: 45%;
+    background-color: #3c589a;
+    color: white;
+    border-radius:  0.25rem;
+    height: 40px;
+    font-weight: bold;
+    border: 1px solid #3c589a;
+}
+
+#socialicon {
+    margin-top: 40px;
+}
+
+#signupbtn {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#signupword {
+    color: #7c37fa !important;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+input[type=text] {
+    border: 3px solid #ccc;
+}
+#loginimg{
+    width: 100%;
+    margin-top: 40px;
+}
+
+
+@media screen and (max-width:650px) {
+    #loginimg {
+        display: none;
+    }
+
+    .mbdeopdown {
+        right: -57px !important;
+    }
+
+    .logimg {
+        height: 11vh !important;
+    }
+
+    .qustxt {
+        text-align: initial;
+    }
+
+    .fileuploadrow {
+        margin-top: 46% !important;
+    }
+}
+
+@media screen and (min-width:650px) {
+    .mbdeopdown {
+        right: 17px;
+        position: absolute;
+    }
+}
+
+.fileuploadrow {
+    margin-top: 16%;
+}
+
+.cardborder {
+    border-left: 5px solid #7c37fa;
+}
+
+.logimg {
+    height: 7vh;
+}
+
+
+#email,#password, #cpassword,#uname{
+    border-radius:  0.25rem;
+    border: none;
+}
+#forgot{
+    float: right;
+}
+#signin{
+    background-color: #7c37fa;
+}
+
+#formdiv{
+  
+    margin: 50px 0px;
+}
+#email,#uname{
+    margin-bottom: 30px;
+    background-color: #dee2e66e;
+    padding: 10px;
+}
+#password, #cpassword{
+    background-color: #dee2e66e;
+    padding: 10px;
+}
+.btn{
+    width: 100%;
+    border-radius:  0.25rem;
+}
+#google{
+float: right;
+width: 45%;
+background-color: red;
+color: white;
+border-radius:  0.25rem;
+height: 40px;
+font-weight: bold;
+border: 1px solid red;
+}
+#facebook{
+    width: 45%;
+    background-color: #3c589a;
+    color: white;
+    border-radius:  0.25rem;
+    height: 40px;
+    font-weight: bold;
+    border: 1px solid #3c589a;
+}
+#socialicon{
+    margin-top: 20px;
+}
+#signupbtn{
+    margin-top: 20px;
+    text-align: center;
+}
+#signupword{
+    color: #3c589a;
+    font-weight: bold;
+}
+input[type=email] {
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  border: none;
+  }
+  
+
+  #secondpart{
+      height: 95vh;
+  }
+  #before{
+      position: absolute;
+      margin-top: 2%;
+      font-size: 20px;
+      color: black;
+      display: none;
+  }
+  .colortext{
+      color:#7c37fa ;
+      font-weight: 500px;
+  }
+  @media  (max-width:650px) {
+    #before{
+        position: absolute;
+        margin-top: 2%;
+        font-size: 20px;
+        color: black;
+        display: block !important;
+    }
+  }
+  .code{
+    width: 15% !important;
+    margin: 10px;
+    padding: 8px;
+    border-radius:  0.25rem;
+    border: none;
+    background-color: #dee2e66e;
+    color: #7c37fa;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 500;
+  }
+  .code::-webkit-outer-spin-button,
+.code::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+  p{
+      color: #908da1 !important;
+      font-weight: 400px;
+  }
+  #didcode{
+      font-size: 14px;
+      margin-left: -123px;
+  }
+  #resend{
+      float: right;
+      margin-top: -40px;
+      color: #7c37fa;
+      font-size: 14px;
+      font-weight: 500;
+  }
+  
+  #resendtime{
+    float: right;
+    margin-top: -20px;
+  }
+  #entercode{
+      text-align: center;
+      margin-top: -30px;
+  }
+  #img {
+    display: none;
+  }
+  .input-preview__src {
+    display: none;
+  }
+
+  .input-preview {
+
+    border-radius: 70px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    transition: ease-in-out 750ms;
+    background-size:cover ;
+    background-image:url("../img/camera-icon.png");
+}
+
+  .input-preview::after {
+
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    transform: translateY(50%);
+    content: '';
+    font-style: italic;
+    font-size: 1em;
+  }
+
+  .has-image::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background: rgba(50, 50, 50, 0.5); */
+    content: " ";
+    transition: ease-in-out 750ms;
+  }
+
+  .has-image::after {
+    content: "";
+    color: white;
+  }
+  .card{
+    border-radius: 20px;
+    background:linear-gradient(90deg, #ff009e 0%,#f23538 100% );
+  }
+  #imgpre{
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    text-align: center;
+    margin-left: 68px;
+    margin-bottom: 30px;
+  }
+  #unametext{
+      font-size: 18px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+  }
+  #formdiv2{
+    margin-top: 6rem!important;
+  }
+  #crown{
+      margin-top: -2%;
+  }
+  #edit{
+      margin-bottom: 20px;
+      float: right;
+  }
+  link{
+     
+  }
+  #erroremail{
+      margin-top: -20px;
+  }
+  .invalid-feedback{
+      text-align: initial;
+  }
+  .form-group{
+      margin-bottom: 10px;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+  body {
+    background-color: rgb(228, 229, 247);
+    
+  }
+  
+  .social-login img {
+    width: 24px;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  
+  
+ 
+  .title {
+    text-align: center;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .subtitle {
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  .btn-text {
+    margin: 0;
+  }
+  
+  .social-login {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+  }
+  
+  .google-btn {
+    background: #fff;
+    border: solid 2px rgb(245 239 239);
+    border-radius: 8px;
+    font-weight: bold;
+    display: flex;
+    padding: 10px 10px;
+    flex: auto;
+    align-items: center;
+    gap: 5px;
+    justify-content: center;
+  }
+  
+  .fb-btn {
+    background: #fff;
+    border: solid 2px rgb(69, 69, 185);
+    border-radius: 8px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .or {
+    text-align: center;
+    font-weight: bold;
+    border-bottom: 2px solid rgb(245 239 239);
+    line-height: 0.1em;
+    margin: 25px 0;
+  }
+  
+  .or span {
+    background: #fff;
+    padding: 0 10px;
+  }
+  
+  .email-login {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .email-login label {
+    color: rgb(170 166 166);
+  }
+  
+  input[type="text"],
+  input[type="password"],
+  input[type="number"],
+  input[type="date"],
+  input[type="email"],
+  textarea[type="text"],
+  input[type="time"] {
+    padding: 15px 20px;
+    margin-top: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+  }
+  
+  .cta-btn {
+    background-color: rgb(69, 69, 185);
+    color: white;
+    padding: 18px 20px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+  }
+  
+  .forget-pass {
+    text-align: center;
+    display: block;
+  }

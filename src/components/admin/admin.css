@@ -1,0 +1,38 @@
+.card-body {
+    padding: 40px;
+    text-align: initial;
+    margin-left: 10px;
+    border: none;
+    background: white;
+    border-radius: 0px;
+}
+
+.card:hover {
+    transform: rotate(2deg);
+}
+
+
+.btnview {
+    width: 80px;
+    height: 45px;
+    background: #7c37fa ;
+    border: 2px solid #7c37fa ;
+    outline: 0;
+    color: #fff;
+    justify-content: center;
+    text-transform: uppercase;
+    font-size: 10px;
+    font-weight: 700;
+    border-radius: 50px;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, .3);
+    box-shadow: 0 0 5px 5px rgba(238, 58, 183, .2);
+    cursor: pointer;
+    transition: all .25s;
+}
+
+.hire_btn:hover {
+    background: transparent;
+    color: #7c37fa ;
+    box-shadow: none;
+}

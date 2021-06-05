@@ -1,0 +1,25 @@
+body {
+    height: 722px !important;
+    background-color: white !important;
+}
+.submit {
+    margin-top: 30px;
+    margin-left: -5px;
+    background-color: #7c37fa !important;
+}
+.shadow{
+    border-radius: 0.25rem;
+}
+
+.submit{
+    border-radius: 0.25rem !important
+}
+
+.card-height{
+    height: 342px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Original+Surfer&display=swap');
+* {  
+  font-family:'Original Surfer';
+}

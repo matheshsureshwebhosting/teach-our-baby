@@ -1,0 +1,94 @@
+/* li .Dashboard {
+    background-color: #7c37fa;
+    border-radius:  0.25rem;
+    color: white !important;
+} */
+
+
+
+.navbar {
+    border-bottom: 2px solid #dee2e66e;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Original+Surfer&display=swap');
+
+* {
+    font-family: 'Original Surfer';
+}
+
+
+h3 {
+    font-weight: bolder;
+
+}
+
+.dropdown-menu[data-bs-popper] {
+    left: -113px;
+    margin-top: .125rem;
+}
+@media screen and (min-width:650px) {
+    .dropdown{
+        position: absolute;
+        right: 19px;
+    }
+}
+@media screen and (max-width:650px) {
+    .dropdown-menu[data-bs-popper] {
+        left: -104px !important;
+        margin-top: .125rem;
+    }
+    #mobilecredit{
+        display: block !important;
+        margin-left: 248px;
+        margin-top: -75px;
+    }
+    #iconimg{
+        display: none;
+    }
+    #dropdowndiv{
+        margin-top: -64px !important;
+        margin-left: 300px;
+    }
+    #systemcredit{
+        display: none;
+    }
+}
+
+.leafimg {  
+    display: none;
+}
+
+.activenav{
+    /* background-color: #7c37fa75; */
+    color: black;
+    border-radius:  0.25rem;
+    display: flex;
+}
+
+.activenav .leafimg{
+    height: 22px;
+    margin-right: 9px;
+    display: block;
+}
+.uploadbtn{
+    background-color: #7c37fa;
+    border-radius:  0.25rem;
+    border:none
+}
+
+.heading-title{
+    font-size: 32px;
+    font-family: 'Original Surfer', cursive;
+    font-weight: 600;
+}
+
+.nav-button{
+    color: white !important;
+}
+
+.recentlyuploaded{
+    margin-top:3vh;
+}
+#mobilecredit{
+    display: none;
+}
