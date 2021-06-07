@@ -47,7 +47,7 @@ class Login extends Component {
                 transition: Slide
             })
         } else {
-            axios.post("http://168.119.159.183:4500/forgot/verify", {
+            axios.post(`${process.env.REACT_APP_SERVER}/forgot/verify`, {
                 email: email,
                 OTP: code
             }).then((res) => {

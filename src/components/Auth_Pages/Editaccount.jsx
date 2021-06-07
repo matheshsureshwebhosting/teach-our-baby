@@ -21,7 +21,7 @@ class Login extends Component {
 
     componentDidMount = async () => {
         const userid = localStorage.getItem("userid")
-        await axios.get("http://168.119.159.183:4500/profile", {
+        await axios.get(`${process.env.REACT_APP_SERVER}/profile`, {
             headers: {
                 userid: userid
             }
@@ -49,7 +49,7 @@ class Login extends Component {
                 profileimg: imageuploader,
                 userid: userid
             }
-            await axios.post("http://168.119.159.183:4500/profile/create", { profile }, {
+            await axios.post(`${process.env.REACT_APP_SERVER}/profile/create`, { profile }, {
                 headers: {
                     userid: userid
                 }

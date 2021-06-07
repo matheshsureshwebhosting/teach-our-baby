@@ -12,7 +12,7 @@ class Recentupload extends Component {
     componentDidMount = async () => {
         const userid = localStorage.getItem("userid")
         if (userid != null) {
-            await axios.get("http://168.119.159.183:4500/recentuploads", {
+            await axios.get(`${process.env.REACT_APP_SERVER}/recentuploads`, {
                 headers: {
                     userid: userid
                 }

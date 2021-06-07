@@ -45,7 +45,7 @@ export default class Uploadform extends Component {
             description: this.state.msg,
         }
         console.log(maildatas);
-        await axios.post("http://168.119.159.183:4500/contact/send", { maildatas }, {
+         await axios.post(`${process.env.REACT_APP_SERVER}/contact/send`,{ maildatas },{
             headers: {
                 userid: userid
             }

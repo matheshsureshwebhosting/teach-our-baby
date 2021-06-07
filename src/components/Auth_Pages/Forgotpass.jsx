@@ -19,7 +19,7 @@ class Login extends Component {
     }
     checkemail = async (email) => {
         console.log(email)
-        await axios.post("http://168.119.159.183:4500/forgot", {
+        await axios.post(`${process.env.REACT_APP_SERVER}/forgot`, {
             email: email
         }).then((res) => {
             if (res.data === true) {

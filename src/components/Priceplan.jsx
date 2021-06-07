@@ -19,7 +19,7 @@ export default class Priceplan extends Component {
         document.body.appendChild(script);
     }
     payAmount = (plan, amount) => {
-        axios.post("http://168.119.159.183:4500/razorpay/pay", {
+        axios.post(`${process.env.REACT_APP_SERVER}/razorpay/pay`, {
             plan: plan,
             amount: amount
         }, {
@@ -58,7 +58,7 @@ export default class Priceplan extends Component {
             "order_id": id,
             "handler": async function (response) {
                 const { razorpay_order_id, razorpay_payment_id, razorpay_signature } = response
-                await axios.post("http://168.119.159.183:4500/razorpay/send", {
+                await axios.post(`${process.env.REACT_APP_SERVER}/razorpay/send`, {
                     razorpay_order_id: razorpay_order_id,
                     razorpay_payment_id: razorpay_payment_id,
                     razorpay_signature: razorpay_signature,
@@ -118,7 +118,7 @@ export default class Priceplan extends Component {
                                 <div className="text-center mb-3">
                                     <h4>₹ 50 <span className="month">Per month</span></h4>
                                 </div>
-                                <button onClick={() => this.payAmount("Basic", 50)} value="Select" className="btn btn-block text-uppercase rounded-lg py-3">Select</button>
+                                {/* <button onClick={() => this.payAmount("Basic", 50)} value="Select" className="btn btn-block text-uppercase rounded-lg py-3">Select</button> */}
                             </div>
                         </div>
                     </SplideSlide>
@@ -145,7 +145,7 @@ export default class Priceplan extends Component {
                                 <div className="text-center mb-3">
                                     <h4>₹ 150 <span className="month">Per month</span></h4>
                                 </div>
-                                <button onClick={() => this.payAmount("Advance", 150)} className="btn btn-block text-uppercase rounded-lg py-3">Select</button>
+                                {/* <button onClick={() => this.payAmount("Advance", 150)} className="btn btn-block text-uppercase rounded-lg py-3">Select</button> */}
                             </div>
                         </div>
                     </SplideSlide>
@@ -172,7 +172,7 @@ export default class Priceplan extends Component {
                                 <div className="text-center mb-3">
                                     <h4>₹ 250 <span className="month">Per month</span></h4>
                                 </div>
-                                <button onClick={() => this.payAmount("Premium", 250)} className="btn btn-block text-uppercase rounded-lg py-3">Select</button>
+                                {/* <button onClick={() => this.payAmount("Premium", 250)} className="btn btn-block text-uppercase rounded-lg py-3">Select</button> */}
                             </div>
                         </div>
                     </SplideSlide>

@@ -14,7 +14,7 @@ export default class Shuffledpptdata extends Component {
     componentDidMount = async () => {
         const { userid } = this.state
         if (userid !== null) {
-            await axios.get("http://168.119.159.183:4500/admin", {
+            await axios.get(`${process.env.REACT_APP_SERVER}/admin`, {
                 headers: {
                     userid: userid
                 }
@@ -37,7 +37,7 @@ export default class Shuffledpptdata extends Component {
 
     getShuffleppts = async (userid, admin) => {        
         const getUsers = new Promise(async (resolve, reject) => {
-           await axios.get("http://168.119.159.183:4500/admin/shuffledppt", {
+           await axios.get(`${process.env.REACT_APP_SERVER}/admin/shuffledppt`, {
                 headers: {
                     userid: userid,
                     admin: admin

@@ -104,7 +104,7 @@ class Wizard extends Component {
         shuffled_ppt: getshuffleppturl
       }
       console.log(pptdatas);
-      await axios.post("http://168.119.159.183:4500/shuffle/send", { pptdatas }, {
+      await axios.post(`${process.env.REACT_APP_SERVER}/shuffle/send`, { pptdatas }, {
         headers: {
           userid: userid
         }
@@ -120,7 +120,7 @@ class Wizard extends Component {
       const formData = await new FormData()
       await formData.append("myFile", file)
       await formData.append("shuffle", Number(shuffle))
-      await axios.post("http://168.119.159.183:4500/shuffle-ppt/uploadfile", formData, {
+      await axios.post(`${process.env.REACT_APP_SERVER}/shuffle-ppt/uploadfile`, formData, {
         headers: {
           userid: userid
         }

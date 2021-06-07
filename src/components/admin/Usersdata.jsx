@@ -14,7 +14,7 @@ export default class Usersdata extends Component {
     componentDidMount = async () => {
         const { userid } = this.state
         if (userid !== null) {
-            await axios.get("http://168.119.159.183:4500/admin", {
+            await axios.get(`${process.env.REACT_APP_SERVER}/admin`, {
                 headers: {
                     userid: userid
                 }
@@ -36,7 +36,7 @@ export default class Usersdata extends Component {
     }
     getUsers = async (userid, admin) => {
         const getUsers = new Promise(async (resolve, reject) => {
-            await axios.get("http://168.119.159.183:4500/admin/users", {
+            await axios.get(`${process.env.REACT_APP_SERVER}/admin/users`, {
                 headers: {
                     userid: userid,
                     admin: admin

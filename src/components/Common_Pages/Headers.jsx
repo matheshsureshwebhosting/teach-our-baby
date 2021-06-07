@@ -25,6 +25,7 @@ export default class Headers extends Component {
             credits: 0,
         }
     }
+   
 
     copyref = () => {
         const { userid } = this.state
@@ -50,7 +51,19 @@ export default class Headers extends Component {
     }
 
     componentDidMount = () => {
+
         const { userid } = this.state
+      
+
+        const script = document.createElement("script");
+
+        script.src = "https://checkout.razorpay.com/v1/checkout.js";
+        script.async = true;
+
+        document.body.appendChild(script);
+        
+
+       
         if (userid !== null) {
             db.collection("users").doc(userid).get().then((doc) => {
                 if (doc.data() !== undefined && doc.data().dppic !== undefined) {
@@ -67,21 +80,69 @@ export default class Headers extends Component {
                 }
             })
         }
-        // get credits
-        axios.get(`${process.env.REACT_APP_SERVER}/razorpay`, {
+        
+    }
+
+  
+    payAmount = (plan, amount) => {
+        axios.post(`${process.env.REACT_APP_SERVER}/razorpay/pay`, {
+            plan: plan,
+            amount: amount
+        }, {
             headers: {
-                userid: userid
+                userid: "s.kalidas120799@gmail.com"
             }
-        }).then((res) => {
-            if (res.data !== false) {
-                const { amount } = res.data
-                this.setState({
-                    credits: amount
+        }).then(async (res) => {
+            if (res.data.status === "success") {
+                const id = await res.data.sub.id
+                this.pay(id, plan, amount)
+            } else {
+                toast.error("Payment Error", {
+                    autoClose: 1000,
+                    transition: Slide
                 })
             }
         }).catch((error) => {
-            console.log(error);
+            if (error.message === "Network Error") {
+                toast.error("Server Not Connect", {
+                    autoClose: 1000,
+                    transition: Slide
+                })
+            }
         })
+
+    }
+
+    pay = (id, plan, amount) => {
+        console.log(id, plan);
+        var options = {
+            "key": process.env.REACT_APP_RAZORPAY_KEY_ID_TEST,
+            "currency": "INR",
+            "name": "Razorpay",
+            "description": "Plan Subcription",
+            "image": "https://previews.123rf.com/images/subhanbaghirov/subhanbaghirov1605/subhanbaghirov160500087/56875269-vector-light-bulb-icon-with-concept-of-idea-brainstorming-idea-illustration-.jpg",
+            "order_id": id,
+            "handler": async function (response) {
+                const { razorpay_order_id, razorpay_payment_id, razorpay_signature } = response
+                await axios.post(`${process.env.REACT_APP_SERVER}/razorpay/send`, {
+                    razorpay_order_id: razorpay_order_id,
+                    razorpay_payment_id: razorpay_payment_id,
+                    razorpay_signature: razorpay_signature,
+                    amount: amount,
+                    plan: plan,
+                    userid: "s.kalidas120799@gmail.com"
+                }, {
+                    headers: {
+                        userid: "s.kalidas120799@gmail.com"
+                    }
+                }).then((res) => { console.log(res); })
+            },
+            "theme": {
+                "color": "#227254"
+            }
+        };
+        var rzp = new window.Razorpay(options);
+        rzp.open();
     }
     logout = () => {
         localStorage.removeItem("userid")
@@ -95,19 +156,19 @@ export default class Headers extends Component {
 
                 <div className="container-fluid">
                     <Link className="navbar-brand" to={userid == null ? "/" : "/home"}><img src={logo} alt="" style={{ height: "7vh" }}></img><span className="heading-title"> &nbsp; Teach Our Baby</span></Link>
-                   
-                    
+
+
 
                     {
 
 
                         userid != null ? (<div className="dropdown" id="dropdowndiv">
                             <a href={"javascipt:void(0)"} id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                <img src={dpimage !== null ? dpimage :profile } width="40" height="40" className="rounded-circle" alt="" />
+                                <img src={dpimage !== null ? dpimage : profile} width="40" height="40" className="rounded-circle" alt="" />
                             </a>
-                            <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1" style={{boxShadow: "2px 5px 20px rgba(0, 0, 0, 0.1)"}}>
+                            <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1" style={{ boxShadow: "2px 5px 20px rgba(0, 0, 0, 0.1)" }}>
                                 <li> <h4 style={{ marginLeft: "14px", fontSize: "20px" }}>Hello {this.state.name}</h4></li>
-                                <li> <h6 style={{ marginLeft: "14px", cursor:"pointer"}}>Credit : {credits}</h6></li>
+                                <li> <h6 style={{ marginLeft: "14px", cursor: "pointer" }}>Credit : {credits}</h6></li>
                                 <li className="dropdown-item" style={{ textAlign: "left" }} data-bs-toggle="modal" data-bs-target="#exampleModal" >Add Credit</li>
                                 <li><Link className="dropdown-item" to="/downloadhistory" style={{ cursor: "pointer" }} >History</Link></li>
                                 <li><a id="copy" href="##" className="dropdown-item" onClick={this.copyref} >Share Now</a></li>
@@ -119,39 +180,39 @@ export default class Headers extends Component {
                     }
 
 
-<div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div className="modal-dialog">
-                        <div className="modal-content" id="pricemodel" style={{ backgroundColor: "none" }}>
-                            <div className="modal-body">
-                                <div className="card mb-5 mb-lg-0 rounded-lg shadow pricecard">
-                                    <div className="card-body bg-light rounded-bottom">
-                                        <div className="text-center crownimg">
-                                            <img src={crown} alt="" width="50" />
-                                            <h5>Premium</h5>
+                    <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div className="modal-dialog">
+                            <div className="modal-content" id="pricemodel" style={{ backgroundColor: "none" }}>
+                                <div className="modal-body">
+                                    <div className="card mb-5 mb-lg-0 rounded-lg shadow pricecard">
+                                        <div className="card-body bg-light rounded-bottom">
+                                            <div className="text-center crownimg">
+                                                <img src={crown} alt="" width="50" />
+                                                <h5>Premium</h5>
+                                            </div>
+                                            <ul className="list-unstyled mb-4 mt-5">
+                                                <li className="mb-3"><span className="mr-3"><i
+                                                    className="fa fa-check text-success"></i></span> Sync on multiple devices</li>
+                                                <li className="mb-3"><span className="mr-5"><i className="fa fa-check text-success"></i></span> Access notebook in offline mode</li>
+                                                <li className="mb-3"><span className="mr-3"><i
+                                                    className="fa fa-check text-success"></i></span> <span>Search in documents and attachments</span></li>
+                                                <li className="mb-3"><span className="mr-3"><i
+                                                    className="fa fa-check text-success"></i></span> Annotate PDF files</li>
+                                                <li className="mb-3"><span className="mr-3"><i
+                                                    className="fa fa-check text-success"></i></span> Scan and digitize business Cards</li>
+                                            </ul>
+                                            <div className="text-center mb-3">
+                                                <h4>₹ 50 <span className="month">Per month</span></h4>
+                                            </div>
+                                            <button onClick={() => this.payAmount("Basic", 50)} value="Select" className="btn btn-block text-uppercase rounded-lg py-3 paybtn">Select</button>
                                         </div>
-                                        <ul className="list-unstyled mb-4 mt-5">
-                                            <li className="mb-3"><span className="mr-3"><i
-                                                className="fa fa-check text-success"></i></span> Sync on multiple devices</li>
-                                            <li className="mb-3"><span className="mr-5"><i className="fa fa-check text-success"></i></span> Access notebook in offline mode</li>
-                                            <li className="mb-3"><span className="mr-3"><i
-                                                className="fa fa-check text-success"></i></span> <span>Search in documents and attachments</span></li>
-                                            <li className="mb-3"><span className="mr-3"><i
-                                                className="fa fa-check text-success"></i></span> Annotate PDF files</li>
-                                            <li className="mb-3"><span className="mr-3"><i
-                                                className="fa fa-check text-success"></i></span> Scan and digitize business Cards</li>
-                                        </ul>
-                                        <div className="text-center mb-3">
-                                            <h4>₹ 50 <span className="month">Per month</span></h4>
-                                        </div>
-                                        <button onClick={() => this.payAmount("Basic", 50)} value="Select" className="btn btn-block text-uppercase rounded-lg py-3 paybtn">Select</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                
+
 
                     {/* <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
